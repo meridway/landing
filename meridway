@@ -1,0 +1,1153 @@
+
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="MeridWay — Cross-border communications, business development, and strategic relations." />
+  <title>MeridWay | Strategic Growth Across Borders</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --charcoal: #333;
+      --deep: #171717;
+      --gold: #d4a843;
+      --gold-light: #ecd38d;
+      --cream: #f8f6f1;
+      --white: #fff;
+      --muted: #717171;
+      --border: #e9e4da;
+      --max-width: 1180px;
+      --radius: 18px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 120px;
+    }
+
+    body {
+      margin: 0;
+      color: var(--charcoal);
+      background: var(--white);
+      font-family: "DM Sans", Arial, sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    body.menu-open { overflow: hidden; }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; width: 100%; }
+    button, input { font: inherit; }
+    button { cursor: pointer; }
+
+    .container {
+      width: min(calc(100% - 48px), var(--max-width));
+      margin: 0 auto;
+    }
+
+    .section { padding: 110px 0; }
+    .section-light { background: var(--cream); }
+
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 16px;
+      color: #98721d;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      width: 28px;
+      height: 1px;
+      background: var(--gold);
+      content: "";
+    }
+
+    h1, h2, h3 {
+      margin-top: 0;
+      color: var(--deep);
+      font-family: "Playfair Display", Georgia, serif;
+    }
+
+    h2 {
+      font-size: clamp(2.2rem, 4vw, 3.5rem);
+      line-height: 1.1;
+      letter-spacing: -.045em;
+    }
+
+    p { margin-top: 0; }
+
+    .section-heading {
+      max-width: 690px;
+      margin-bottom: 55px;
+    }
+
+    .section-heading h2 { margin-bottom: 18px; }
+
+    .section-heading p {
+      max-width: 600px;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .btn {
+      display: inline-flex;
+      min-height: 50px;
+      align-items: center;
+      justify-content: center;
+      padding: 0 24px;
+      border: 1px solid transparent;
+      border-radius: 4px;
+      font-size: 14px;
+      font-weight: 700;
+      transition: .25s ease;
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+    .btn-gold { color: #201a0d; background: var(--gold); }
+    .btn-gold:hover { background: var(--gold-light); }
+    .btn-dark { color: var(--white); background: var(--deep); }
+    .btn-dark:hover { background: #4a4a4a; }
+
+    .btn-light-outline {
+      color: var(--white);
+      border-color: rgba(255,255,255,.42);
+      background: transparent;
+    }
+
+    .btn-light-outline:hover {
+      color: var(--gold-light);
+      border-color: var(--gold);
+    }
+
+    /* Navigation */
+    .site-header {
+      position: sticky;
+      z-index: 1000;
+      top: 0;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      background: rgba(23,23,23,.96);
+      backdrop-filter: blur(15px);
+    }
+
+    .header-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 17px 24px 15px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--white);
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 21px;
+      font-weight: 600;
+      letter-spacing: -.03em;
+    }
+
+    .logo-mark {
+      position: relative;
+      width: 25px;
+      height: 25px;
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+    }
+
+    .logo-mark::after {
+      position: absolute;
+      top: 5px;
+      bottom: 5px;
+      left: 11px;
+      width: 1px;
+      background: var(--gold);
+      content: "";
+      transform: rotate(35deg);
+    }
+
+    nav { margin-top: 12px; }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 29px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #d7d7d7;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      transition: color .2s ease;
+    }
+
+    .nav-links a:hover { color: var(--gold-light); }
+
+    .menu-toggle {
+      display: none;
+      width: 42px;
+      height: 42px;
+      border: 1px solid rgba(255,255,255,.28);
+      border-radius: 4px;
+      color: var(--white);
+      background: transparent;
+      font-size: 20px;
+    }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      display: grid;
+      min-height: 690px;
+      place-items: center;
+      overflow: hidden;
+      color: var(--white);
+      background:
+        radial-gradient(circle at 78% 25%, rgba(212,168,67,.22), transparent 25%),
+        radial-gradient(circle at 20% 76%, rgba(212,168,67,.12), transparent 28%),
+        linear-gradient(130deg, #141414 0%, #272727 48%, #353535 100%);
+    }
+
+    .hero::before {
+      position: absolute;
+      inset: 0;
+      opacity: .16;
+      background-image:
+        linear-gradient(rgba(255,255,255,.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.1) 1px, transparent 1px);
+      background-size: 72px 72px;
+      content: "";
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      width: min(calc(100% - 48px), 920px);
+      padding: 100px 0;
+      text-align: center;
+    }
+
+    .hero .eyebrow {
+      justify-content: center;
+      color: var(--gold-light);
+    }
+
+    .hero h1 {
+      max-width: 900px;
+      margin: 0 auto 25px;
+      color: var(--white);
+      font-size: clamp(3.1rem, 7vw, 6.2rem);
+      font-weight: 600;
+      letter-spacing: -.06em;
+      line-height: .98;
+    }
+
+    .hero h1 span { color: var(--gold-light); }
+
+    .hero p {
+      max-width: 650px;
+      margin: 0 auto 36px;
+      color: rgba(255,255,255,.72);
+      font-size: 18px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 13px;
+    }
+
+    .hero-note {
+      margin-top: 28px !important;
+      color: rgba(255,255,255,.46) !important;
+      font-size: 13px !important;
+    }
+
+    /* Services */
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .service-card {
+      min-height: 300px;
+      padding: 34px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--white);
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 18px 50px rgba(28,28,28,.1);
+    }
+
+    .service-number {
+      display: block;
+      margin-bottom: 58px;
+      color: var(--gold);
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 18px;
+    }
+
+    .service-card h3 { margin-bottom: 12px; font-size: 25px; }
+    .service-card p { color: var(--muted); font-size: 15px; }
+
+    /* Approach */
+    .approach-grid {
+      display: grid;
+      grid-template-columns: .95fr 1.05fr;
+      align-items: center;
+      gap: 84px;
+    }
+
+    .approach-image { position: relative; }
+
+    .approach-image img {
+      height: 590px;
+      border-radius: var(--radius);
+      object-fit: cover;
+      filter: grayscale(25%);
+    }
+
+    .image-badge {
+      position: absolute;
+      right: -28px;
+      bottom: 34px;
+      max-width: 230px;
+      padding: 22px;
+      border-left: 3px solid var(--gold);
+      color: var(--white);
+      background: var(--deep);
+    }
+
+    .image-badge strong {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--gold-light);
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 26px;
+      line-height: 1;
+    }
+
+    .image-badge span { font-size: 12px; }
+    .approach-text p { color: var(--muted); font-size: 16px; }
+
+    .approach-list {
+      margin: 30px 0 34px;
+      border-top: 1px solid var(--border);
+    }
+
+    .approach-item {
+      display: grid;
+      grid-template-columns: 40px 1fr;
+      gap: 15px;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .approach-item strong {
+      color: var(--gold);
+      font-family: "Playfair Display", Georgia, serif;
+    }
+
+    .approach-item h3 {
+      margin-bottom: 3px;
+      font-family: "DM Sans", Arial, sans-serif;
+      font-size: 16px;
+    }
+
+    .approach-item p { margin: 0; font-size: 14px; }
+
+    /* Stats */
+    .stats { color: var(--white); background: var(--deep); }
+    .stats-heading { text-align: center; }
+
+    .stats-heading .eyebrow {
+      justify-content: center;
+      color: var(--gold-light);
+    }
+
+    .stats-heading h2 { color: var(--white); }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      margin-top: 60px;
+      border-top: 1px solid rgba(255,255,255,.14);
+      border-bottom: 1px solid rgba(255,255,255,.14);
+    }
+
+    .stat {
+      padding: 32px 20px;
+      border-right: 1px solid rgba(255,255,255,.14);
+      text-align: center;
+    }
+
+    .stat:last-child { border-right: 0; }
+
+    .stat-number {
+      display: block;
+      color: var(--gold-light);
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(38px, 4vw, 56px);
+      line-height: 1.1;
+    }
+
+    .stat-label {
+      display: block;
+      margin-top: 7px;
+      color: rgba(255,255,255,.64);
+      font-size: 13px;
+    }
+
+    /* Pricing */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .pricing-card {
+      display: flex;
+      flex-direction: column;
+      padding: 35px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--white);
+    }
+
+    .pricing-card.featured {
+      border-color: var(--charcoal);
+      color: var(--white);
+      background: var(--charcoal);
+      box-shadow: 0 18px 50px rgba(28,28,28,.12);
+    }
+
+    .pricing-tag {
+      min-height: 22px;
+      margin-bottom: 20px;
+      color: var(--gold);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+
+    .pricing-card h3 { margin-bottom: 10px; font-size: 28px; }
+    .pricing-card.featured h3 { color: var(--white); }
+
+    .price {
+      margin-bottom: 13px;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 36px;
+      line-height: 1;
+    }
+
+    .price small {
+      color: var(--muted);
+      font-family: "DM Sans", Arial, sans-serif;
+      font-size: 13px;
+    }
+
+    .featured .price small,
+    .featured .pricing-intro,
+    .featured li { color: rgba(255,255,255,.7); }
+
+    .pricing-intro {
+      min-height: 48px;
+      margin-bottom: 25px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .pricing-card ul {
+      display: grid;
+      gap: 12px;
+      margin: 0 0 30px;
+      padding: 0;
+      color: #555;
+      font-size: 14px;
+      list-style: none;
+    }
+
+    .pricing-card li::before {
+      margin-right: 10px;
+      color: var(--gold);
+      content: "✓";
+    }
+
+    .pricing-card .btn { margin-top: auto; }
+
+    /* FAQ */
+    .faq-grid {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 100px;
+    }
+
+    .faq-intro p { color: var(--muted); font-size: 16px; }
+    .faq-list { border-top: 1px solid var(--border); }
+    .faq-item { border-bottom: 1px solid var(--border); }
+
+    .faq-question {
+      display: flex;
+      width: 100%;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 22px 0;
+      border: 0;
+      color: var(--deep);
+      background: transparent;
+      font-weight: 700;
+      text-align: left;
+    }
+
+    .faq-icon {
+      color: var(--gold);
+      font-size: 24px;
+      font-weight: 400;
+      transition: transform .25s ease;
+    }
+
+    .faq-answer {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows .3s ease;
+    }
+
+    .faq-answer-inner { overflow: hidden; }
+
+    .faq-answer p {
+      margin: 0;
+      padding-bottom: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .faq-item.active .faq-answer { grid-template-rows: 1fr; }
+    .faq-item.active .faq-answer p { padding-bottom: 22px; }
+    .faq-item.active .faq-icon { transform: rotate(45deg); }
+
+    /* Newsletter */
+    .newsletter {
+      padding: 75px 0;
+      color: var(--white);
+      background: #242424;
+    }
+
+    .newsletter-grid {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 50px;
+    }
+
+    .newsletter .eyebrow { color: var(--gold-light); }
+
+    .newsletter h2 {
+      margin-bottom: 8px;
+      color: var(--white);
+      font-size: clamp(30px, 3vw, 42px);
+    }
+
+    .newsletter p { margin: 0; color: rgba(255,255,255,.6); }
+
+    .newsletter-form {
+      display: flex;
+      width: min(100%, 460px);
+      border-bottom: 1px solid rgba(255,255,255,.45);
+    }
+
+    .newsletter-form input {
+      width: 100%;
+      min-width: 0;
+      padding: 13px 0;
+      border: 0;
+      outline: 0;
+      color: var(--white);
+      background: transparent;
+    }
+
+    .newsletter-form input::placeholder { color: rgba(255,255,255,.48); }
+
+    .newsletter-form button {
+      border: 0;
+      color: var(--gold-light);
+      background: transparent;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .message {
+      min-height: 18px;
+      margin-top: 8px !important;
+      color: var(--gold-light) !important;
+      font-size: 12px;
+    }
+
+    /* Footer */
+    footer {
+      padding: 25px 0;
+      color: rgba(255,255,255,.58);
+      background: var(--deep);
+      font-size: 12px;
+    }
+
+    .footer-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .socials { display: flex; gap: 18px; }
+    .socials a:hover { color: var(--gold-light); }
+
+    /* Sticky CTA */
+    .sticky-cta {
+      position: fixed;
+      z-index: 900;
+      right: 22px;
+      bottom: 22px;
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 13px 18px;
+      border-radius: 100px;
+      color: #211b0d;
+      background: var(--gold);
+      box-shadow: 0 10px 30px rgba(0,0,0,.22);
+      font-size: 13px;
+      font-weight: 700;
+      transition: .25s ease;
+    }
+
+    .sticky-cta:hover {
+      transform: translateY(-3px);
+      background: var(--gold-light);
+    }
+
+    /* Fade animations */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity .65s ease, transform .65s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 850px) {
+      .section { padding: 85px 0; }
+      .service-grid, .pricing-grid { grid-template-columns: 1fr; }
+      .service-card { min-height: auto; }
+      .service-number { margin-bottom: 34px; }
+
+      .approach-grid, .faq-grid, .newsletter-grid {
+        grid-template-columns: 1fr;
+        gap: 42px;
+      }
+
+      .approach-image { max-width: 620px; }
+      .approach-image img { height: 450px; }
+    }
+
+    @media (max-width: 650px) {
+      .container { width: min(calc(100% - 36px), var(--max-width)); }
+
+      .header-inner {
+        min-height: 70px;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 14px 18px;
+      }
+
+      .menu-toggle { display: block; }
+
+      nav {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        max-height: 0;
+        margin: 0;
+        overflow: hidden;
+        border-top: 1px solid transparent;
+        background: var(--deep);
+        transition: max-height .3s ease, border-color .3s ease;
+      }
+
+      nav.open {
+        max-height: 350px;
+        border-color: rgba(255,255,255,.1);
+      }
+
+      .nav-links {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 12px 22px 20px;
+      }
+
+      .nav-links a { display: block; padding: 13px 0; }
+      .hero { min-height: 630px; }
+      .hero-content { width: min(calc(100% - 36px), 920px); }
+      .hero p { font-size: 16px; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .stat { border-bottom: 1px solid rgba(255,255,255,.14); }
+      .stat:nth-child(2) { border-right: 0; }
+      .stat:nth-child(3), .stat:nth-child(4) { border-bottom: 0; }
+
+      .image-badge {
+        right: 16px;
+        bottom: 16px;
+      }
+
+      .footer-content {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .sticky-cta { right: 15px; bottom: 15px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+
+      *, *::before, *::after {
+        transition-duration: .01ms !important;
+        animation-duration: .01ms !important;
+      }
+
+      .fade-in { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="#home" class="logo" aria-label="MeridWay Home">
+        <span class="logo-mark"></span>
+        MeridWay
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">☰</button>
+
+      <nav id="mainNav">
+        <ul class="nav-links">
+          <li><a href="#services">Capabilities</a></li>
+          <li><a href="#approach">Approach</a></li>
+          <li><a href="#pricing">Engagements</a></li>
+          <li><a href="#faq">Insights</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <div class="eyebrow">Strategic Relations · Cross-Border Growth</div>
+        <h1>Build meaningful <span>momentum</span> across markets.</h1>
+        <p>
+          MeridWay helps ambitious businesses navigate new markets,
+          strengthen commercial relationships, and turn strategic opportunity
+          into durable growth.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-gold" href="#contact">Start a conversation</a>
+          <a class="btn btn-light-outline" href="#services">Explore capabilities</a>
+        </div>
+        <p class="hero-note">Independent counsel for leaders expanding with intent.</p>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-heading fade-in">
+          <div class="eyebrow">What we do</div>
+          <h2>Representation with clarity, relationships with purpose.</h2>
+          <p>We operate at the intersection of commercial strategy, communications, and trusted stakeholder engagement.</p>
+        </div>
+
+        <div class="service-grid">
+          <article class="service-card fade-in">
+            <span class="service-number">01</span>
+            <h3>Market Entry</h3>
+            <p>Practical market intelligence, local positioning, and a clear route from first conversation to commercial presence.</p>
+          </article>
+          <article class="service-card fade-in">
+            <span class="service-number">02</span>
+            <h3>Business Development</h3>
+            <p>Targeted opportunity mapping and senior-level introductions that move the right partnerships forward.</p>
+          </article>
+          <article class="service-card fade-in">
+            <span class="service-number">03</span>
+            <h3>Strategic Relations</h3>
+            <p>Thoughtful communications and stakeholder strategies that protect reputation while building long-term confidence.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-light" id="approach">
+      <div class="container approach-grid">
+        <div class="approach-image fade-in">
+          <img src="https://picsum.photos/id/1036/900/1100" alt="Modern international business district" />
+          <div class="image-badge">
+            <strong>Borderless</strong>
+            <span>Local insight. Global perspective.</span>
+          </div>
+        </div>
+
+        <div class="approach-text fade-in">
+          <div class="eyebrow">Our approach</div>
+          <h2>Discreet counsel. Measurable progress.</h2>
+          <p>Every assignment is shaped around your commercial context, leadership priorities, and the relationships that matter most.</p>
+
+          <div class="approach-list">
+            <div class="approach-item">
+              <strong>01</strong>
+              <div>
+                <h3>Listen before acting</h3>
+                <p>We begin with the nuance behind the brief—not just the brief itself.</p>
+              </div>
+            </div>
+            <div class="approach-item">
+              <strong>02</strong>
+              <div>
+                <h3>Prioritise the signal</h3>
+                <p>Focused recommendations replace broad activity and unnecessary noise.</p>
+              </div>
+            </div>
+            <div class="approach-item">
+              <strong>03</strong>
+              <div>
+                <h3>Build trust over time</h3>
+                <p>We create momentum through credible, well-timed, human engagement.</p>
+              </div>
+            </div>
+          </div>
+
+          <a href="#pricing" class="btn btn-dark">View engagement models</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section stats">
+      <div class="container">
+        <div class="stats-heading fade-in">
+          <div class="eyebrow">Our perspective</div>
+          <h2>Built for complex, high-value conversations.</h2>
+        </div>
+
+        <div class="stats-grid fade-in" id="statsGrid">
+          <div class="stat">
+            <span class="stat-number" data-target="12" data-suffix="+">0</span>
+            <span class="stat-label">Markets supported</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number" data-target="85" data-suffix="%">0</span>
+            <span class="stat-label">Client work from referrals</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number" data-target="30" data-suffix="+">0</span>
+            <span class="stat-label">Senior relationships activated</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number" data-target="25" data-suffix=" yrs">0</span>
+            <span class="stat-label">Cross-border experience</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="pricing">
+      <div class="container">
+        <div class="section-heading fade-in">
+          <div class="eyebrow">Engagement models</div>
+          <h2>Flexible support for the stage you are in.</h2>
+          <p>Our work is tailored to each mandate. These models provide a practical starting point for a focused conversation.</p>
+        </div>
+
+        <div class="pricing-grid">
+          <article class="pricing-card fade-in">
+            <div class="pricing-tag">Focused assessment</div>
+            <h3>Market Brief</h3>
+            <p class="pricing-intro">A concise foundation for informed market decisions.</p>
+            <ul>
+              <li>Market opportunity scan</li>
+              <li>Competitor mapping</li>
+              <li>Entry risk assessment</li>
+              <li>Executive recommendation memo</li>
+            </ul>
+            <a href="#contact" class="btn btn-dark">Discuss a brief</a>
+          </article>
+
+          <article class="pricing-card featured fade-in">
+            <div class="pricing-tag">Most selected</div>
+            <h3>Growth Partner</h3>
+            <p class="pricing-intro">Ongoing business development and strategic representation.</p>
+            <ul>
+              <li>Dedicated senior counsel</li>
+              <li>Target account development</li>
+              <li>Commercial introductions</li>
+              <li>Monthly leadership reporting</li>
+            </ul>
+            <a href="#contact" class="btn btn-gold">Start a conversation</a>
+          </article>
+
+          <article class="pricing-card fade-in">
+            <div class="pricing-tag">High-touch mandate</div>
+            <h3>Strategic Mandate</h3>
+            <div class="price">By proposal</div>
+            <p class="pricing-intro">For complex market moves, sensitive relationships, and long-term growth.</p>
+            <ul>
+              <li>Custom market strategy</li>
+              <li>Executive engagement</li>
+              <li>Communications advisory</li>
+              <li>Quarterly strategic review</li>
+            </ul>
+            <a href="#contact" class="btn btn-dark">Request a proposal</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-light" id="faq">
+      <div class="container faq-grid">
+        <div class="faq-intro fade-in">
+          <div class="eyebrow">Frequently asked</div>
+          <h2>A considered beginning.</h2>
+          <p>The best partnerships start with an open, practical conversation.</p>
+        </div>
+
+        <div class="faq-list fade-in">
+          <div class="faq-item active">
+            <button class="faq-question" aria-expanded="true">
+              Which markets does MeridWay support?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p>Our network is strongest across Europe, the Gulf, and selected Asia-Pacific markets. For every mandate, we assess local fit before confirming scope.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              Do you work with early-stage companies?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p>Yes, where there is a clear proposition and leadership readiness to engage. We work with growth-stage companies and established international firms.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              How quickly can an engagement begin?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p>Focused assessments can usually begin within two weeks. Ongoing mandates are scoped carefully and typically begin within three to four weeks.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              Is your work confidential?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p>Always. Discretion is central to our practice. We are comfortable working under mutual confidentiality agreements before substantive discussions begin.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="newsletter" id="contact">
+      <div class="container newsletter-grid">
+        <div>
+          <div class="eyebrow">Stay informed</div>
+          <h2>Signals worth paying attention to.</h2>
+          <p>Occasional perspectives on cross-border growth, commercial strategy, and market movement.</p>
+        </div>
+
+        <div>
+          <form class="newsletter-form" id="newsletterForm">
+            <input type="email" id="email" placeholder="Your email address" aria-label="Email address" required />
+            <button type="submit">Subscribe →</button>
+          </form>
+          <p class="message" id="formMessage"></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <a href="#contact" class="sticky-cta">✦ Let’s talk</a>
+
+  <footer>
+    <div class="container footer-content">
+      <span>© <span id="year"></span> MeridWay. All rights reserved.</span>
+      <div class="socials">
+        <a href="#">LinkedIn</a>
+        <a href="#">Instagram</a>
+        <a href="mailto:info@meridway.com">Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const menuToggle = document.getElementById("menuToggle");
+    const mainNav = document.getElementById("mainNav");
+    const navLinks = document.querySelectorAll(".nav-links a");
+
+    menuToggle.addEventListener("click", function () {
+      const isOpen = mainNav.classList.toggle("open");
+
+      document.body.classList.toggle("menu-open", isOpen);
+      menuToggle.setAttribute("aria-expanded", isOpen);
+      menuToggle.textContent = isOpen ? "✕" : "☰";
+    });
+
+    navLinks.forEach(function (link) {
+      link.addEventListener("click", function () {
+        mainNav.classList.remove("open");
+        document.body.classList.remove("menu-open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.textContent = "☰";
+      });
+    });
+
+    const fadeElements = document.querySelectorAll(".fade-in");
+
+    const fadeObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          fadeObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    fadeElements.forEach(function (element) {
+      fadeObserver.observe(element);
+    });
+
+    const statsGrid = document.getElementById("statsGrid");
+    const counters = document.querySelectorAll(".stat-number");
+    let countersStarted = false;
+
+    const statsObserver = new IntersectionObserver(function (entries) {
+      // Fixed: use logical AND, not bitwise AND.
+      if (entries[0].isIntersecting && !countersStarted) {
+        countersStarted = true;
+
+        counters.forEach(function (counter) {
+          const target = Number(counter.dataset.target);
+          // Fixed: use logical OR, not bitwise OR, so text suffixes are preserved.
+          const suffix = counter.dataset.suffix || "";
+          const duration = 1400;
+          const startTime = performance.now();
+
+          function updateCounter(currentTime) {
+            const progress = Math.min((currentTime - startTime) / duration, 1);
+            const eased = 1 - Math.pow(1 - progress, 3);
+
+            counter.textContent = Math.floor(eased * target) + suffix;
+
+            if (progress < 1) {
+              requestAnimationFrame(updateCounter);
+            } else {
+              counter.textContent = target + suffix;
+            }
+          }
+
+          requestAnimationFrame(updateCounter);
+        });
+
+        statsObserver.unobserve(statsGrid);
+      }
+    }, { threshold: 0.35 });
+
+    statsObserver.observe(statsGrid);
+
+    const faqItems = document.querySelectorAll(".faq-item");
+
+    faqItems.forEach(function (item) {
+      const button = item.querySelector(".faq-question");
+
+      button.addEventListener("click", function () {
+        const currentlyOpen = item.classList.contains("active");
+
+        faqItems.forEach(function (faq) {
+          faq.classList.remove("active");
+          faq.querySelector(".faq-question").setAttribute("aria-expanded", "false");
+        });
+
+        if (!currentlyOpen) {
+          item.classList.add("active");
+          button.setAttribute("aria-expanded", "true");
+        }
+      });
+    });
+
+    const newsletterForm = document.getElementById("newsletterForm");
+    const formMessage = document.getElementById("formMessage");
+
+    newsletterForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const email = document.getElementById("email").value.trim();
+
+      if (email) {
+        formMessage.textContent = "Thank you — you’re on the list.";
+        newsletterForm.reset();
+      }
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+```
